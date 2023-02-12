@@ -21,7 +21,6 @@ function setup() {
   button = createButton("WEATHER");
   button.addClass("button");
   button.parent("gui-container");
-  // button.parent("sketch-container");
 
   sky = color(255, 255, 255);
 
@@ -37,8 +36,10 @@ function draw() {
 
   if (pressed % 2 && pressed != 0) {
     updateWeather();
+    button.removeClass("wait");
   } else {
     shuffleWeather();
+    button.addClass("wait");
   }
 
   if (bobbyState == sad) {

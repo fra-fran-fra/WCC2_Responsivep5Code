@@ -43,3 +43,7 @@ canvas {
   background-color:white;
   color: #371bd3;
 }
+
+.button.wait{
+  cursor: progress;
+}
