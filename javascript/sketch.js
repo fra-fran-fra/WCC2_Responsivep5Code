@@ -40,10 +40,12 @@ function draw() {
     updateWeather();
     button.html("SHUFFLE WEATHER");
     button.removeClass("wait");
+    canvas.removeClass("wait");
   } else {
     shuffleWeather();
     button.html("...");
     button.addClass("wait");
+    canvas.addClass("wait");
   }
 
   if (bobbyState == sad) {

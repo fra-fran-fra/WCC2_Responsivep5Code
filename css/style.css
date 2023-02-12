@@ -45,10 +45,6 @@ canvas {
   color: black;
 }
 
-.button.wait{
-  cursor: progress;
-}
-
-.button.wait:hover{
+.wait{
   cursor: progress;
 }
