@@ -13,7 +13,7 @@ canvas {
 #gui-container{
   position: fixed;
   bottom: 0;
-  left: 10px;
+  left: 50%;
   z-index: 100;
   width: 220px;
   padding: 10px;
@@ -21,6 +21,7 @@ canvas {
   margin: 10px 0;
   box-sizing: border-box;
   background-color: rgb(255,255,255,0.7);
+  transform: translate(-50%);
 }
 
 .button{
