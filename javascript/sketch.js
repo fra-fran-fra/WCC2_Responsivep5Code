@@ -34,9 +34,11 @@ function draw() {
   drawLandscape(); //landscape
   bobby.setup(); //emoticon
 
-  if (pressed % 2 && pressed != 0) {
+  if (pressed == 0) {
+    button.html("SHUFFLE WEATHER");
+  } else if (pressed % 2 && pressed != 0) {
     updateWeather();
-    button.html("SHUFFLE WEATEHR");
+    button.html("SHUFFLE WEATHER");
     button.removeClass("wait");
   } else {
     shuffleWeather();
