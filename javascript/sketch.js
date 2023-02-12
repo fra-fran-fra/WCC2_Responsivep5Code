@@ -14,8 +14,13 @@ let randomWeather = 2;
 
 function setup() {
   angleMode(DEGREES);
+
   canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent("sketch-container");
+  
   button = createButton("WEATHER");
+  button.addClass("button");
+  button.parent("gui-container");
 
   sky = color(255, 255, 255);
 
@@ -155,7 +160,7 @@ function updateWeather() {
     sky = color(0, 180, 255);
     bobbyState = happy;
   } else if (randomWeather == 1) {
-    sky = color(86,111,151);
+    sky = color(86, 111, 151);
     bobbyState = sad;
   }
 }
