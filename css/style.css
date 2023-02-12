@@ -24,10 +24,10 @@ canvas {
 }
 
 .button{
-  background-color: #371bd3;
-  border: solid 1px #371bd3;
+  background-color: black;
+  border: solid 1px rgb(245, 215, 90);
   border-radius: 10px;
-  color: white;
+  color: rgb(245, 215, 90);
   padding: 15px 20px;
   text-align: center;
   text-decoration: none;
