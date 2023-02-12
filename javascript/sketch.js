@@ -21,6 +21,7 @@ function setup() {
   button = createButton("WEATHER");
   button.addClass("button");
   button.parent("gui-container");
+  // button.parent("sketch-container");
 
   sky = color(255, 255, 255);
 
