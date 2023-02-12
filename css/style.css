@@ -35,13 +35,13 @@ canvas {
   margin:0 auto;
   font-size: 16px;
   min-width: 200px;
-  cursor: pointer;
+  cursor: default;
 }
 
 
 .button:hover{
-  background-color:white;
-  color: #371bd3;
+  background-color: rgb(28, 191, 52);
+  color: black;
 }
 
 .button.wait{
