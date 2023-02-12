@@ -17,7 +17,7 @@ function setup() {
 
   canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent("sketch-container");
-  
+
   button = createButton("SHUFFLE WEATHER");
   button.addClass("button");
   button.parent("gui-container");
@@ -36,6 +36,7 @@ function draw() {
 
   if (pressed % 2 && pressed != 0) {
     updateWeather();
+    button.html("SHUFFLE WEATEHR");
     button.removeClass("wait");
   } else {
     shuffleWeather();
