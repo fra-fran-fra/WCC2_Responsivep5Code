@@ -143,10 +143,11 @@ class Drop {
     this.y1 = random(windowHeight);
     this.x2 = this.x1;
     this.y2 = this.y1 + 50;
+    this.colour = color(0, 0, 255);
   }
 
   display() {
-    stroke(0, 0, 255);
+    stroke(this.colour);
     line(this.x1, this.y1, this.x2, this.y2);
   }
 
