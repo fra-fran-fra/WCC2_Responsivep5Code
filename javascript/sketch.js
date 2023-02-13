@@ -147,8 +147,10 @@ class Drop {
   }
 
   display() {
+    push();
     stroke(this.colour);
     line(this.x1, this.y1, this.x2, this.y2);
+    pop();
   }
 
   move() {
