@@ -8,6 +8,9 @@ let sad = 0;
 let bobbyState = wtf;
 
 let sky;
+let sunX = 0;
+let rain = [];
+let numDrops = 300;
 
 let pressed = 0;
 let randomWeather = 2;
@@ -23,6 +26,10 @@ function setup() {
   button.parent("gui-container");
 
   sky = color(255, 255, 255);
+
+  for (let i = 0; i < numDrops; i++) {
+    rain[i] = new Drop();
+  }
 
   bobby = new Emoticon();
 
@@ -130,6 +137,30 @@ class Emoticon {
   }
 }
 
+class Drop {
+  constructor() {
+    this.x1 = random(windowWidth);
+    this.y1 = random(windowHeight);
+    this.x2 = this.x1;
+    this.y2 = this.y1 + 50;
+  }
+
+  display() {
+    stroke(0, 0, 255);
+    line(this.x1, this.y1, this.x2, this.y2);
+  }
+
+  move() {
+    this.y1++;
+    this.y2++;
+
+    if (this.y1 > windowHeight) {
+      this.y1 = 0;
+      this.y2 = this.y1 + 50;
+    }
+  }
+}
+
 function drawLandscape() {
   //MOUNTAINS
   let v4 = createVector(windowWidth * 0.75, windowHeight * 0.4);
@@ -153,6 +184,17 @@ function drawLandscape() {
   rect(rX, rY, rW, rH);
 }
 
+function drawSun() {
+  fill(255, 127, 0);
+  ellipse(sunX, 100, 100, 100);
+
+  sunX++;
+
+  if (sunX > windowWidth) {
+    sunX = 0;
+  }
+}
+
 function handlePressed() {
   pressed++;
   randomWeather = floor(random(2));
@@ -167,9 +209,14 @@ function updateWeather() {
   if (randomWeather == 0) {
     sky = color(0, 180, 255);
     bobbyState = happy;
+    drawSun();
   } else if (randomWeather == 1) {
     sky = color(86, 111, 151);
     bobbyState = sad;
+    for (let i = 0; i < rain.length; i++) {
+      rain[i].display();
+      rain[i].move();
+    }
   }
 }
 
